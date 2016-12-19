@@ -1,0 +1,9 @@
+{
+  "name": "glbut-faster",
+  "version": "0.0.0",
+  "description": "GLButFaster",
+  "main": "server.js",
+  "author": {
+    "name": "zeechapman"
+  }
+}
