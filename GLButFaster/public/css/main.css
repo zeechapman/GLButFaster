@@ -1,0 +1,21 @@
+﻿body {
+    background: #000;
+    color: #FFF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    width: 50%;
+    text-align: center;
+}
+
+#head, #mid, #foot {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#foot {
+    font-size: 8px;
+    color: #AAA;
+}
