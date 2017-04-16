@@ -6,7 +6,7 @@
 
 // Variables
 var rate = 1; // Speed of the audio.
-var aud = "../media/aud/gl-";  // Specifying the path of the media of choice as a shortcut
+var aud = "https://raw.githubusercontent.com/zeechapman/zeechapman.github.io/master/glbutfaster/media/aud/gl-";  // Need to specify special directory
 var counter = 0; // Counts how many times they tried to do their part.
 
 var wereUp = 0.04;  // Each time they get lucky, multiply the rate by this value (default 0.04)
@@ -15,14 +15,8 @@ var imUp = 0.02;    // Each time just one of them got lucky, multiply by this va
 var loopMax = 15; // Default value - 15
 var luckyMax = 13.5; // Default value - 13.5
 
-var colorLoop = 0; // Reserved for cycleColors()
-var colorIndex = -1; // For my pretty list of colors
-
 // Counts how many times they get lucky
 var luckyCounter = 0;
-
-// A list of colors.  Because I like colors
-var colors = [ "#34005e", "#333333", "#5e5c00", "#5e2a00", "#555555"];
 
 
 var sndStart = new Howl({ src: aud + "start.ogg" }); // Start of the audio
@@ -47,23 +41,6 @@ function ran(max) {
     return Math.floor(Math.random() * max);
 }
 
-// What will be causing the background to flash colors for a short time
-function cycleColors() {
-  setTimeout(function() { // Execute this every 10 miliseconds, 30 times
-    if (colorIndex == 4) {
-      colorIndex = -1; // Don't judge me
-    }
-    document.body.style.backgroundColor = colors[colorIndex];
-    colorLoop++;
-    colorIndex++;
-    if (colorLoop < 30) {
-      cycleColors();
-    } else {
-        document.body.style.backgroundColor = "#000"; // After the loop is over, set the background back to black
-    }
-  }, 10); // Seizure warning with this one
-}
-
 // Endlessly makes them get lucky, until the maximum number of luckys they can get
 function getLucky() {
     sndMid.play();
@@ -76,7 +53,6 @@ function getLucky() {
       } else {
           sndEnd.play();
           vid.play();
-          cycleColors();
           sndEnd.once('end', function() {
               document.getElementById("vid").insertAdjacentHTML('afterend', "<a href='javascript:void(0)' onclick='location.reload()'>Do it again?</a><br /><small>Times they got lucky: <b>" + luckyCounter + "</b><br />(if there's a decimal, only one of them got lucky a couple of times)</small>");
           });
@@ -130,17 +106,10 @@ function lyricsMix() {
 
 // When the document loads, begin
 window.onload = function () {
-  console.log("Are you ready for a world of hurt?");
     var vid = document.getElementById("vid");
     sndStart.play();
     sndStart.on('end', function () {
-        console.log("Time to mix things up a bit...");
         lyricsMix();
     });
-
-};
-
-
-window.onblur = function() {
 
 };

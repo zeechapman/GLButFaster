@@ -12,6 +12,10 @@ h2 {
     font-weight: lighter;
 }
 
+small {
+  font-size: 10px;
+}
+
 #head, #mid, #foot {
     display: flex;
     flex-flow: column;
@@ -32,10 +36,15 @@ h2 {
     text-align: center;
 }
 
-small {
-  font-size: 10px;
+#block {
+  width: 2048px;
+  background: #000;
+  height: 2048px;
+  position: absolute;
+  animation: fading 2s forwards;
+  top: 0;
+  opacity: 1;
 }
-
 
 a { color: red; }
 
@@ -47,3 +56,12 @@ a:visited { color: red; }
     from being used unintentionally
 */
 img { pointer-events: none;}
+
+@keyframes fading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
