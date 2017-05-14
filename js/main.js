@@ -6,7 +6,7 @@
 
 // Variables
 var rate = 1; // Speed of the audio.
-var aud = "https://raw.githubusercontent.com/zeechapman/zeechapman.github.io/master/glbutfaster/media/aud/gl-";  // Need to specify special directory
+var aud = "https://raw.githubusercontent.com/zeechapman/GLButFaster/0aef4825bb151115e1d97eec9f38f4aa5d1b715b/media/aud/gl-";  // Need to specify special directory
 var counter = 0; // Counts how many times they tried to do their part.
 
 var wereUp = 0.04;  // Each time they get lucky, multiply the rate by this value (default 0.04)
