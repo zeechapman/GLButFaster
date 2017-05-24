@@ -107,6 +107,17 @@ function lyricsMix() {
 // When the document loads, begin
 window.onload = function () {
     var vid = document.getElementById("vid");
+
+    if (vid.addEventListener) {
+        vid.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+    } else {
+        vid.attachEvent('oncontextmenu', function() {
+            window.event.returnValue = false;
+        });
+    }
+
     sndStart.play();
     sndStart.on('end', function () {
         lyricsMix();

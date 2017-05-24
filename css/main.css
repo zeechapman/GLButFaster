@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-h2 {
+h1 {
     width: 50%;
     text-align: center;
     font-family: 'Damion';
@@ -36,15 +36,6 @@ small {
     text-align: center;
 }
 
-#block {
-  width: 2048px;
-  background: #000;
-  height: 2048px;
-  position: absolute;
-  animation: fading 2s forwards;
-  top: 0;
-  opacity: 1;
-}
 
 a { color: red; }
 
