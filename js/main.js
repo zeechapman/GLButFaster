@@ -108,6 +108,7 @@ function lyricsMix() {
 window.onload = function () {
     var vid = document.getElementById("vid");
 
+    // Prevent users from right-clicking on video itself
     if (vid.addEventListener) {
         vid.addEventListener('contextmenu', function(e) {
             e.preventDefault();
