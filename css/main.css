@@ -47,12 +47,3 @@ a:visited { color: red; }
     from being used unintentionally
 */
 img { pointer-events: none;}
-
-@keyframes fading {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
